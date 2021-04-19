@@ -26,7 +26,7 @@ RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Install Terraform
 RUN mkdir /tf
-RUN curl https://releases.hashicorp.com/terraform/0.14.5/terraform_0.14.5_linux_amd64.zip > terraform.zip
+RUN curl https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_linux_amd64.zip > terraform.zip
 RUN unzip -o terraform.zip
 RUN cp ./terraform tf/
 ENV PATH=/tf:$PATH
