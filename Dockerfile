@@ -7,6 +7,10 @@ USER root
 COPY ./install-docker.sh .
 RUN sh install-docker.sh
 
+# Install Python
+RUN apt-get update
+RUN apt install build-essential python3 python3-venv python3-pip -y
+
 # Install GCP SDK
 RUN curl https://sdk.cloud.google.com > /install.sh
 RUN bash /install.sh --disable-prompts --install-dir=/
@@ -25,8 +29,7 @@ ENV PATH=/tf:$PATH
 
 # Install Node js
 RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
-RUN apt-get install -y nodejs
-RUN apt-get install -y npm
+RUN apt-get install -y nodejs gcc g++ make 
 
 # Switch to Jenkins User
 USER jenkins
