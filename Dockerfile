@@ -22,7 +22,7 @@ ENV PATH=/google-cloud-sdk/bin:$PATH
 # Install kubectl
 # RUN gcloud components install kubectl
 RUN curl -LO https://dl.k8s.io/release/v1.21.0/bin/linux/amd64/kubectl
-RUN sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Install Terraform
 RUN mkdir /tf
