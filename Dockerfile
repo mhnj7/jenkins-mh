@@ -8,8 +8,8 @@ RUN apt-get update
 RUN apt-get upgrade -y
  
 # Install Docker
-COPY ./install-docker.sh .
-RUN sh install-docker.sh
+# COPY ./install-docker.sh .
+# RUN sh install-docker.sh
 
 # Install Python
 RUN apt-get install build-essential python3 python3-venv python3-pip -y
