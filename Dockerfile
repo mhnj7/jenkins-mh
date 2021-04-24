@@ -8,8 +8,8 @@ RUN apt-get update
 RUN apt-get upgrade -y
  
 # Install Docker
-# COPY ./install-docker.sh .
-# RUN sh install-docker.sh
+COPY ./install-docker.sh .
+RUN sh install-docker.sh
 
 # Install Python
 RUN apt-get install build-essential python3 python3-venv python3-pip -y
@@ -33,8 +33,8 @@ ENV PATH=/tf:$PATH
 
 
 # Install Node js
-RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
-RUN apt-get install -y nodejs gcc g++ make 
+# RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
+# RUN apt-get install -y nodejs gcc g++ make 
 
 # Switch to Jenkins User
 USER jenkins
