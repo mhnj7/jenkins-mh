@@ -33,7 +33,7 @@ ENV PATH=/tf:$PATH
 
 
 # Install Node js
-RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get install -y nodejs gcc g++ make 
 
 # Switch to Jenkins User
